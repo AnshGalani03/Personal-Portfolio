@@ -172,29 +172,6 @@
     /*------------------------------------------------------
   	/  ALL Popup
   	/------------------------------------------------------*/
-    if ($(".popup_video").length > 0) {
-      $(`.popup_video`).lightcase({
-        transition: "elastic",
-        showSequenceInfo: false,
-        slideshow: false,
-        swipe: true,
-        showTitle: false,
-        showCaption: false,
-        controls: true,
-      });
-    }
-
-    $(".modal-popup").magnificPopup({
-      type: "inline",
-      fixedContentPos: false,
-      fixedBgPos: true,
-      overflowY: "auto",
-      closeBtnInside: true,
-      preloader: false,
-      midClick: true,
-      removalDelay: 300,
-      mainClass: "popup-mfp",
-    });
   });
 
   $(window).on("load", function () {
@@ -249,6 +226,10 @@
       // Add a class or directly apply styles to trigger the stroke animation
       svgText.classList.add("animate-stroke");
     }
+    // Set the total duration of the preloader display to 3 seconds
+    setTimeout(() => {
+      tl.play();
+    }, 3000);
 
     /*------------------------------------------------------
   	/  Services Hover BG
