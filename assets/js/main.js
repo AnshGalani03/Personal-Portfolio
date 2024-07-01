@@ -116,36 +116,6 @@
     /*------------------------------------------------------
   	/  Portfolio Gallery Carousel
   	/------------------------------------------------------*/
-    $(".portfolio_gallery.owl-carousel").owlCarousel({
-      items: 2,
-      loop: true,
-      lazyLoad: true,
-      center: true,
-      // autoWidth: true,
-      autoplayHoverPause: true,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      smartSpeed: 800,
-      margin: 30,
-      nav: false,
-      dots: true,
-      responsive: {
-        // breakpoint from 0 up
-        0: {
-          items: 1,
-          margin: 0,
-        },
-        // breakpoint from 768 up
-        768: {
-          items: 2,
-          margin: 20,
-        },
-        992: {
-          items: 2,
-          margin: 30,
-        },
-      },
-    });
 
     /*------------------------------------------------------
   	/ Testimonial Carousel
@@ -193,53 +163,6 @@
         },
       },
     });
-    /*------------------------------------------------------
-  	/ Post Gallery Carousel
-  	/------------------------------------------------------*/
-    $(".tj-post__gallery.owl-carousel").owlCarousel({
-      items: 1,
-      loop: true,
-      margin: 30,
-      dots: false,
-      nav: true,
-      navText: [
-        '<i class="fal fa-arrow-left"></i>',
-        '<i class="fal fa-arrow-right"></i>',
-      ],
-      autoplay: false,
-      smartSpeed: 1000,
-      autoplayTimeout: 3000,
-    });
-    /*------------------------------------------------------
-  	/ Brand Slider
-  	/------------------------------------------------------*/
-    if ($(".brand-slider").length > 0) {
-      var brand = new Swiper(".brand-slider", {
-        slidesPerView: 6,
-        spaceBetween: 30,
-        loop: false,
-        breakpoints: {
-          320: {
-            slidesPerView: 2,
-          },
-          576: {
-            slidesPerView: 3,
-          },
-          640: {
-            slidesPerView: 3,
-          },
-          768: {
-            slidesPerView: 4,
-          },
-          992: {
-            slidesPerView: 5,
-          },
-          1024: {
-            slidesPerView: 6,
-          },
-        },
-      });
-    }
 
     /*------------------------------------------------------
   	/  Nice Select
@@ -364,34 +287,6 @@
     });
 
     /*------------------------------------------------------
-  	/  Portfolio Filter BG Color
-  	/------------------------------------------------------*/
-    function filter_animation() {
-      var active_bg = $(".portfolio-filter .button-group .active-bg");
-      var element = $(".portfolio-filter .button-group .active");
-      $(".portfolio-filter .button-group button").on("click", function () {
-        var e = $(this);
-        activeFilterBtn(active_bg, e);
-      });
-      activeFilterBtn(active_bg, element);
-    }
-    filter_animation();
-
-    function activeFilterBtn(active_bg, e) {
-      if (!e.length) {
-        return false;
-      }
-      var leftOff = e.offset().left;
-      var width = e.outerWidth();
-      var menuLeft = $(".portfolio-filter .button-group").offset().left;
-      e.siblings().removeClass("active");
-      e.closest("button")
-        .siblings()
-        .addClass(".portfolio-filter .button-group");
-      active_bg.css({ left: leftOff - menuLeft + "px", width: width + "px" });
-    }
-
-    /*------------------------------------------------------
   	/  Funfact
   	/------------------------------------------------------*/
     if ($(".odometer").length > 0) {
@@ -403,43 +298,6 @@
         });
       });
     }
-
-    // Form Validation
-    /* contact form */
-    if ($("#contact-form").length > 0) {
-      $("#contact-form").validate({
-        rules: {
-          conName: "required",
-          conEmail: {
-            required: true,
-            email: true,
-          },
-        },
-
-        messages: {
-          conName: "Enter your name.",
-          conEmail: "Enter a valid email.",
-        },
-        submitHandler: function (form) {
-          // start ajax request
-          $.ajax({
-            type: "POST",
-            url: "assets/mail/contact-form.php",
-            data: $("#contact-form").serialize(),
-            cache: false,
-            success: function (data) {
-              if (data == "Y") {
-                $("#message_sent").modal("show");
-                $("#contact-form").trigger("reset");
-              } else {
-                $("#message_fail").modal("show");
-              }
-            },
-          });
-        },
-      });
-    }
-    /* !contact form */
   });
 })(jQuery);
 
