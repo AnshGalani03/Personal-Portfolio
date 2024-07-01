@@ -229,7 +229,7 @@
     // Set the total duration of the preloader display to 3 seconds
     setTimeout(() => {
       tl.play();
-    }, 3000);
+    }, 2000);
 
     /*------------------------------------------------------
   	/  Services Hover BG
