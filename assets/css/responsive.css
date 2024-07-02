@@ -635,4 +635,7 @@
   .skills-widget .skill-item {
     max-width: max-content;
   }
+  .whatsapp-wrapper a{
+    right: 15px;
+  }
 }
