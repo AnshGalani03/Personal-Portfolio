@@ -69,7 +69,7 @@
   --tj-fz-h4: 24px;
   --tj-fz-h5: 22px;
   --tj-fz-h6: 18px;
-  --tj-fz-sub-title: 36px;
+  --tj-fz-sub-title: 28px;
 }
 
 * {
@@ -828,7 +828,9 @@ body.loaded {
   transition: -webkit-transform 0.3s ease-in-out;
   -o-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
 }
 .tj-header-area .header-menu ul li.current-menu-ancestor a::before,
 .tj-header-area .header-menu ul li:hover a::before {
@@ -1002,7 +1004,7 @@ body.loaded {
 }
 
 .hero-title {
-  font-size: 65px;
+  font-size: 40px;
   background: var(--tj-theme-primary);
   background: -webkit-gradient(
     linear,
@@ -1823,7 +1825,9 @@ body.loaded {
   transition: -webkit-transform 0.3s ease-in-out;
   -o-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
 }
 .footer-menu ul li a:hover::before {
   -webkit-transform-origin: left;
